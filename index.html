@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Psychic</title>
+</head>
+
+<div id="game">
+
+    <h1>THE PSYCHIC GAME</h1>
+    <h2>Guess Number I Am Thinking of   :)
+    </h2>
+    <h2 id="user-guess"></h2>
+    <h2 id="computer-guess">0</h2>
+    <h2 id="user-wins">0</h2>
+    <h2 id="user-losses">0</h2>
+    <h2 id="guesses-left">9</h2>
+    
+</div>
+<body>
+    
+    <!-- - User guesses Number
+        -computer random picks
+        -capture those choices
+        -compare choices and determine a win
+        -display the results to the user -->
+        
+        
+        <script type="text/javascript">
+
+            var wins = 0;
+            var losses = 0;
+            var computerGuess = "";
+            var userGuess = [];
+            var guessesleft = 9;
+            
+            
+            var userwins = document.getElementById("user-wins");
+            var userlosses = document.getElementById("user-losses");
+            var computerguess = document.getElementById("computer-guess");
+            var computerguess = document.getElementById("computer-guess");
+            var userguess = document.getElementById("user-guess");
+            var guessesleft = document.getElementById("guesses-left");
+
+
+        document.onkeyup = function (event) {
+            var userGuess = event.key;
+           // alert("YOURS IS " + userGuess);
+       var computerGuess = Math.floor((Math.random() * 10)+1);
+
+             // alert ("COMPUTER IS " + computerGuess);
+
+              if (userGuess === computerGuess)  {
+                  wins++;
+
+              }
+             else{ 
+                  losses++;  
+                  }
+                 
+            
+             
+             
+
+             
+        
+        userwins.textContent = "WINS: " + wins;
+        userlosses.textContent = "LOSSES:  " + losses;
+        computerguess.textContent = " Computer Guess:  " + computerGuess;
+        userguess.textContent = " Your Guess: " + userGuess;
+
+        };
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
+           
+
+    
+
+
+
+
